@@ -1,0 +1,5 @@
+ENV['PATH'] = ENV['PATH'] + ';C:\Program Files\BitNami Redmine Stack/subversion/bin'
+ENV['PATH'] = ENV['PATH'] + ';C:\Program Files\BitNami Redmine Stack/imagemagick'
+ENV['MAGICK_CODER_MODULE_PATH'] = 'C:\PROGRA~1\BITNAM~1\IMAGEM~1\modules\coders'
+require 'rubygems'
+require 'RMagick'

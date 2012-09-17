@@ -1,0 +1,12 @@
+<% if entry.attribute_names.include?(:mail) == true  then %>
+<%= mail_to "#{entry.mail.each{|ma| ma}}", image_tag("http://redmine/redmine/images/mail.png", :border=>0) %>
+<% end %>
+<% if entry.attribute_names.include?(:displayname)== true && entry.attribute_names.include?(:sn)== false then %>
+<%= "#{entry.displayname.each{| displayn | displayn }}" %>
+<% elsif entry.attribute_names.include?(:displayname)== true && entry.attribute_names.include?(:sn)== true then  %>
+<%= link_to "#{entry.displayname.each{| displayn | displayn }}", "http://www.isea.rwth-aachen.de/staff/#{entry.sn}" %>
+<% end %>
+<% if entry.attribute_names.include?(:telephonenumber) == true then %>
+
+<%= "#{entry.telephonenumber}" %>
+<% end %>

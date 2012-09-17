@@ -1,0 +1,23 @@
+<h2>Telefonbuch</h2>
+
+<% if @authok == false then %>
+<p> Auth hat nicht gefunzt </p>
+<% else %>
+<% @entries.sort! { | a,b | a.displayname <=> b.displayname } %>
+<% for entry in @entries %>
+<p> 
+	<% if entry.attribute_names.include?(:mail) == true  then %>
+	<%= mail_to "#{entry.mail.each{|ma| ma}}", image_tag("mail.png", :border=>0) %>
+	<% end %>
+	<% if entry.attribute_names.include?(:displayname)== true && entry.attribute_names.include?(:sn)== false then %>
+	<%= "#{entry.displayname.each{| displayn | displayn }}" %>
+	<% elsif entry.attribute_names.include?(:displayname)== true && entry.attribute_names.include?(:sn)== true then  %>
+	<%= link_to "#{entry.displayname.each{| displayn | displayn }}", "http://www.isea.rwth-aachen.de/staff/#{entry.sn}" %>
+	<% end %>
+	<% if entry.attribute_names.include?(:telephonenumber) == true then %>
+
+	<%= "#{entry.telephonenumber}" %>
+	<% end %>
+</p>
+<% end %> 
+<% end %>
