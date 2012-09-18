@@ -1,0 +1,53 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category ,   @category.collect {|t| [t.name, t.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.select :status ,   @status.collect {|t| [t.name, t.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :roomnr %><br />
+    <%= f.text_field :roomnr %>
+  </div>
+  <div class="field">
+    <%= f.label :telnr %><br />
+    <%= f.text_field :telnr %>
+  </div>
+  <div class="field">
+    <%= f.label :pcnr %><br />
+    <%= f.text_field :pcnr %>
+  </div>
+  <div class="field">
+    <%= f.label :os %><br />
+    <%= f.text_field :os %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

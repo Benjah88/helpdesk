@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @ticket.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @ticket.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @ticket.category %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @ticket.status %>
+</p>
+
+<p>
+  <b>Roomnr:</b>
+  <%= @ticket.roomnr %>
+</p>
+
+<p>
+  <b>Telnr:</b>
+  <%= @ticket.telnr %>
+</p>
+
+<p>
+  <b>Pcnr:</b>
+  <%= @ticket.pcnr %>
+</p>
+
+<p>
+  <b>Os:</b>
+  <%= @ticket.os %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @ticket.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
