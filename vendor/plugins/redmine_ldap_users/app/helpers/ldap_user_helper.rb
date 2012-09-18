@@ -1,0 +1,2 @@
+module LdapUserHelper
+end
